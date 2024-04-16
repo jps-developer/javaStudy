@@ -1,7 +1,8 @@
-package likelion.bankapp;
+package likelion.bankapp.bank;
+
+import likelion.bankapp.account.Account;
 
 import java.util.List;
-import java.util.UUID;
 
 public interface Bank {
 
@@ -9,4 +10,5 @@ public interface Bank {
     void createAccount(Account account);
     Account findAccount(Long id);
     List<Account> findAll();
+    boolean createStockAccount(Account account);
 }

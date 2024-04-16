@@ -1,8 +1,10 @@
-package likelion.bankapp;
+package likelion.bankapp.bank;
+
+import likelion.bankapp.account.Account;
 
 import java.util.*;
 
-public class TossBank implements Bank{
+public class TossBank implements Bank {
 
 
     Map<Long, Account> store = new HashMap<>();
@@ -14,7 +16,7 @@ public class TossBank implements Bank{
 
     @Override
     public void createAccount(Account account) {
-        store.put(account.getId(), account);
+        store.put(account.getAccountNum(), account);
     }
 
     @Override
@@ -25,5 +27,10 @@ public class TossBank implements Bank{
     @Override
     public List<Account> findAll() {
         return new ArrayList<>(store.values());
+    }
+
+    @Override
+    public boolean createStockAccount(Account account){
+        return false;
     }
 }

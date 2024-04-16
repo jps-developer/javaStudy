@@ -1,12 +1,16 @@
-package likelion.bankapp;
-
-import java.util.UUID;
+package likelion.bankapp.account;
 
 public class Account {
 
     private String name;
     private int balance;
-    private Long id = 0L;
+    private Long accountNum = 0L;
+
+    public Account(Long accountNum, String name, int balance) {
+        this.name = name;
+        this.balance = balance;
+        this.accountNum = accountNum;
+    }
 
     public int deposit(int balance){
         this.balance += balance;
@@ -34,12 +38,12 @@ public class Account {
         this.balance = balance;
     }
 
-    public Long getId() {
-        return id;
+    public Long getAccountNum() {
+        return accountNum;
     }
 
-    public void setId() {
-        id = id++;
+    public void setAccountNum(Long accountNum) {
+        this.accountNum = accountNum;
     }
 
 }
